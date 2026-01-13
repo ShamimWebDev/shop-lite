@@ -42,10 +42,12 @@ export const Hero = () => {
           </div>
 
           <div className="mt-16 w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
-            <div className="h-64 sm:h-96 w-full rounded-xl bg-gradient-to-br from-zinc-900 to-black overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-display text-4xl font-bold opacity-20">
-                PRODUCT SHOWCASE PREVIEW
-              </div>
+            <div className="aspect-video w-full rounded-xl bg-zinc-900 overflow-hidden relative">
+              <img
+                src="/images/hero-showcase.png"
+                alt="ShopLite Showcase"
+                className="h-full w-full object-cover object-center"
+              />
             </div>
           </div>
         </div>

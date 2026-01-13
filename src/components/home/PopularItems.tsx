@@ -9,28 +9,28 @@ export const PopularItems = () => {
       name: "Modern Desk Lamp",
       price: "45",
       category: "Electronics",
-      image: "",
+      image: "/images/desk-lamp.png",
     },
     {
       id: "2",
       name: "Art Deco Vase",
       price: "120",
       category: "Decor",
-      image: "",
+      image: "/images/vase.png",
     },
     {
       id: "3",
       name: "Premium Headphones",
       price: "299",
       category: "Audio",
-      image: "",
+      image: "/images/headphones.png",
     },
     {
       id: "4",
       name: "Leather Journal",
       price: "35",
       category: "Stationery",
-      image: "",
+      image: "/images/journal.png",
     },
   ];
 

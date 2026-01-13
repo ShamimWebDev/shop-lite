@@ -19,10 +19,12 @@ export const ProductCard = ({
   return (
     <div className="group overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] transition-all hover:bg-white/[0.04]">
       <div className="aspect-square w-full overflow-hidden bg-zinc-800 relative">
-        <div className="absolute inset-0 flex items-center justify-center text-zinc-700 font-bold opacity-30">
-          IMAGE PLACEHOLDER
-        </div>
-        {/* Real image would go here */}
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity group-hover:opacity-100" />
         <div className="absolute top-4 left-4 rounded-full bg-black/50 px-3 py-1 text-xs font-medium backdrop-blur-md">
           {category}
         </div>
