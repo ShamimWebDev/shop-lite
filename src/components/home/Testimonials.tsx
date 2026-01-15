@@ -1,3 +1,4 @@
+"use client";
 export const Testimonials = () => {
   const testimonials = [
     {
@@ -33,7 +34,7 @@ export const Testimonials = () => {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="rounded-3xl border border-white/5 bg-white/[0.03] p-8 shadow-sm"
+              className="rounded-3xl border border-white/5 bg-white/3 p-8 shadow-sm"
             >
               <p className="text-lg italic text-foreground/80 lowercase first-letter:uppercase">
                 "{t.text}"

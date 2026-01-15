@@ -1,3 +1,4 @@
+"use client";
 export const Benefits = () => {
   const benefits = [
     {
@@ -51,9 +52,32 @@ export const Benefits = () => {
             </dl>
           </div>
 
-          <div className="relative rounded-3xl bg-zinc-900 aspect-video lg:aspect-square overflow-hidden border border-white/5 shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-bold text-2xl uppercase tracking-widest text-center px-10">
-              Premium Dashboard Visualization
+          <div className="relative rounded-3xl bg-zinc-900 aspect-video lg:aspect-square overflow-hidden border border-white/10 shadow-2xl group">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bbbda51658f7?q=80&w=2070&auto=format&fit=crop"
+              alt="Premium Dashboard"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+
+            {/* Floating Stats Card */}
+            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-xl transition-transform duration-500 group-hover:-translate-y-2">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-white/50">
+                    Monthly Active Users
+                  </p>
+                  <p className="text-xl font-bold text-white">
+                    24.8k{" "}
+                    <span className="text-xs font-normal text-green-400">
+                      +12%
+                    </span>
+                  </p>
+                </div>
+                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="h-5 w-5 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

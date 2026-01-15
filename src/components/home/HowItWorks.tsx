@@ -1,3 +1,4 @@
+"use client";
 export const HowItWorks = () => {
   const steps = [
     {
@@ -45,7 +46,7 @@ export const HowItWorks = () => {
               <h3 className="mt-4 text-2xl font-bold">{step.title}</h3>
               <p className="mt-3 text-foreground/60">{step.description}</p>
               {idx < steps.length - 1 && (
-                <div className="absolute top-12 left-1/2 hidden h-px w-full bg-gradient-to-r from-primary/20 to-transparent lg:block" />
+                <div className="absolute top-12 left-1/2 hidden h-px w-full bg-linear-to-r from-primary/20 to-transparent lg:block" />
               )}
             </div>
           ))}

@@ -1,3 +1,4 @@
+"use client";
 export const Features = () => {
   const features = [
     {
@@ -44,7 +45,7 @@ export const Features = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="group rounded-3xl border border-white/5 bg-white/[0.02] p-8 transition-all hover:bg-white/[0.05] hover:shadow-xl"
+              className="group rounded-3xl border border-white/5 bg-white/2 transition-all hover:bg-white/5 hover:shadow-xl"
             >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-2xl">
                 {feature.icon}

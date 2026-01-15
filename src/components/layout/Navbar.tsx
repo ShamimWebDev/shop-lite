@@ -25,10 +25,16 @@ export const Navbar = () => {
 
         <div className="hidden items-center gap-8 md:flex">
           <Link
+            href="/"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Home
+          </Link>
+          <Link
             href="/items"
             className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
           >
-            Explore
+            Products
           </Link>
           <Link
             href="/#benefits"
