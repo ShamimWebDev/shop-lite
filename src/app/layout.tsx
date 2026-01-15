@@ -29,7 +29,12 @@ export default function RootLayout({
       <body className={`${inter.variable} ${outfit.variable} antialiased`}>
         <AuthProvider>
           {children}
-          <Toaster position="bottom-right" />
+          <Toaster
+            position="top-right"
+            containerStyle={{
+              top: 80,
+            }}
+          />
         </AuthProvider>
       </body>
     </html>

@@ -15,6 +15,15 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("ShopLite API is running");
+});
+
+// Fix for Chrome DevTools CSP error
+app.get("/.well-known/appspecific/com.chrome.devtools.json", (req, res) => {
+  res.sendStatus(204);
+});
+
 // Mock Data
 let items = [
   {

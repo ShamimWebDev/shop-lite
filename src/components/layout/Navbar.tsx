@@ -46,7 +46,7 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <Link href="/add-item" className="hidden sm:block">
-            <Button size="sm" variant="ghost">
+            <Button size="sm" variant="ghost" as="span">
               Sell Item
             </Button>
           </Link>
@@ -84,17 +84,17 @@ export const Navbar = () => {
                       className="absolute right-0 mt-2 z-50 w-56 origin-top-right rounded-2xl border border-white/10 bg-[#0A0A0B] p-2 shadow-2xl ring-1 ring-black ring-opacity-5"
                     >
                       <div className="px-4 py-3 border-b border-white/5 mb-1">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-foreground/40">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                           Signed in as
                         </p>
-                        <p className="text-sm font-medium truncate">
+                        <p className="text-sm font-medium truncate text-white">
                           {user.email}
                         </p>
                       </div>
 
                       <Link
                         href="/profile"
-                        className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors hover:bg-white/5"
+                        className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                         onClick={() => setShowDropdown(false)}
                       >
                         <User className="h-4 w-4" />
@@ -102,7 +102,7 @@ export const Navbar = () => {
                       </Link>
                       <Link
                         href="/settings"
-                        className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors hover:bg-white/5"
+                        className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                         onClick={() => setShowDropdown(false)}
                       >
                         <Settings className="h-4 w-4" />
@@ -129,12 +129,12 @@ export const Navbar = () => {
           ) : (
             <>
               <Link href="/login">
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" as="span">
                   Log in
                 </Button>
               </Link>
               <Link href="/register">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" as="span">
                   Register
                 </Button>
               </Link>

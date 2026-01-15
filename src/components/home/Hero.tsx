@@ -16,7 +16,7 @@ export const Hero = () => {
 
           <h1 className="mt-8 max-w-4xl text-5xl font-display font-bold tracking-tight md:text-7xl">
             Streamline your{" "}
-            <span className="bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-indigo-400 bg-clip-text text-transparent">
               Product Listing
             </span>{" "}
             experience.
@@ -30,12 +30,17 @@ export const Hero = () => {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link href="/items">
-              <Button size="lg" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto" as="span">
                 Explore Items
               </Button>
             </Link>
             <Link href="/add-item">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto"
+                as="span"
+              >
                 Start Selling
               </Button>
             </Link>

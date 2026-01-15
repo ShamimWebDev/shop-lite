@@ -1,57 +1,63 @@
 # ShopLite
 
-ShopLite is a premium, minimalist e-commerce application built with Next.js and Express. It streamlines the product listing experience for local sellers and provides a curated gallery for curious buyers.
+## Short Project Description
 
-## Features
+ShopLite is a premium, minimalist e-commerce application built with Next.js and Express. It is designed to offer a seamless product listing and browsing experience, featuring a high-end UI with smooth animations and responsive design.
 
-- **Landing Page**: 7+ professional sections with high-impact visuals.
-- **Product Gallery**: Dynamic listing of products fetched from an Express API.
-- **Product Details**: Deep-dive view into individual products with rich UI.
-- **Mock Authentication**: Secure-ready login flow using cookies and mock credentials.
-- **Protected Routes**: Middleware-based protection for the "Add Item" flow.
-- **Professional Aesthetics**: Custom-designed UI with framer-motion animations and studio-quality imagery.
+## Setup & Installation Instructions
 
-## Technologies
-
-- **Frontend**: Next.js 15 (App Router), Tailwind CSS, Framer Motion, Lucide React.
-- **Backend**: Express.js, Cookie Parser, CORS, Dotenv.
-- **Styling**: Vanilla CSS with Tailwind v4 features.
-
-## Getting Started
+**Prerequisites:** Node.js installed on your system.
 
 ### 1. Backend Setup
+
+Navigate to the server directory and install dependencies:
 
 ```bash
 cd server
 npm install
-npm run dev # Starts on http://localhost:5000
+npm run dev
+# Server runs on http://localhost:5000
 ```
 
 ### 2. Frontend Setup
 
+In a new terminal window, navigate to the root directory and install dependencies:
+
 ```bash
 # Root directory
 npm install
-npm run dev # Starts on http://localhost:3000
+npm run dev
+# Frontend runs on http://localhost:3000
 ```
 
-### 3. Usage
-
-- Browse the landing page.
-- Visit `/items` to see the product gallery.
-- Use `demo@example.com` / `password` to sign in.
-- Once signed in, visit `/add-item` to list new products.
+_Note: Ensure both servers are running simultaneously._
 
 ## Route Summary
 
-| Route         | Accessibility | Description                        |
-| :------------ | :------------ | :--------------------------------- |
-| `/`           | Public        | Professional Landing Page          |
-| `/items`      | Public        | Product Gallery                    |
-| `/items/[id]` | Public        | Detailed Product View              |
-| `/login`      | Public        | Authentication Page                |
-| `/add-item`   | **Protected** | List New Products (Requires Login) |
+| Route         | Access        | Description                                 |
+| :------------ | :------------ | :------------------------------------------ |
+| `/`           | Public        | Landing page with hero and feature sections |
+| `/items`      | Public        | Gallery view of all listed products         |
+| `/items/[id]` | Public        | Detailed view of a single product           |
+| `/add-item`   | **Protected** | Form to list a new product (Requires Login) |
+| `/login`      | Public        | User login page                             |
+| `/register`   | Public        | User registration page                      |
+| `/profile`    | **Protected** | User profile overview                       |
 
----
+## List of Implemented Features
 
-_Built with ❤️ for a seamless marketplace experience._
+- **Responsive Landing Page:** High-impact visuals with modular sections.
+- **Product Gallery:** Dynamic fetching and display of products from the API.
+- **Product Details:** Individual pages for each item with rich metadata.
+- **User Authentication:** Mock login/signup flow with cookie-based access control.
+- **Protected Routes:** Middleware to secure the selling flow.
+- **Interactive Notifications:** Toast notifications for user actions (Add to Cart, List Item).
+- **Premium UI/UX:** Glassmorphism effects, Framer Motion animations, and custom fonts.
+
+## Brief Explanation of Features
+
+- **Authentication System:** A robust mock authentication system allows users to "Log In" using demo credentials (`demo@example.com` / `password`). This sets a secure HTTP-only cookie to manage sessions and gatekeep access to protected routes like `/add-item`.
+- **Dynamic Item Listing:** Users can list new items via the `/add-item` page. The form includes manual validation to ensure data integrity and provides real-time feedback using toast notifications upon success or error.
+- **Toast Notifications:** A centralized notification system (using `react-hot-toast`) provides immediate visual feedback for key actions, such as adding an item to the cart or successfully listing a product. These notifications are positioned top-right for visibility.
+- **Product Management:** The backend Express API stores an in-memory list of products that persists while the server is running, allowing the frontend to dynamically fetch and display new regular listings instantly.
+- **Visual Design:** The application uses a "dark mode" aesthetic with careful attention to typography (Outfit & Inter fonts) and spacing, creating a professional, trust-building environment for e-commerce.

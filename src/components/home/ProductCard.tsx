@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { toast } from "react-hot-toast";
 import { Button } from "../ui/Button";
 
 interface ProductCardProps {
@@ -17,7 +18,7 @@ export const ProductCard = ({
   image,
 }: ProductCardProps) => {
   return (
-    <div className="group overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] transition-all hover:bg-white/[0.04]">
+    <div className="group overflow-hidden rounded-3xl border border-white/5 bg-white/2 transition-all hover:bg-white/4">
       <div className="aspect-square w-full overflow-hidden bg-zinc-800 relative">
         <img
           src={image}
@@ -42,7 +43,11 @@ export const ProductCard = ({
               Details
             </Button>
           </Link>
-          <Button size="sm" className="px-4">
+          <Button
+            size="sm"
+            className="px-4"
+            onClick={() => toast.success("Added to cart")}
+          >
             Buy
           </Button>
         </div>

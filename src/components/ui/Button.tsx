@@ -10,8 +10,9 @@ export const Button = ({
   variant = "primary",
   size = "md",
   className = "",
+  as: Component = "button",
   ...props
-}: ButtonProps) => {
+}: ButtonProps & { as?: React.ElementType }) => {
   const baseStyles =
     "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed";
 
@@ -31,11 +32,11 @@ export const Button = ({
   };
 
   return (
-    <button
+    <Component
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}
-    </button>
+    </Component>
   );
 };

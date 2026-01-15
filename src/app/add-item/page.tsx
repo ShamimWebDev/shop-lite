@@ -21,11 +21,18 @@ export default function AddItemPage() {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Electronics");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleAddItem = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!name || !price || !description) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
     setLoading(true);
 
     const toastId = toast.loading("Listing your item...");
@@ -34,7 +41,7 @@ export default function AddItemPage() {
       const res = await fetch("http://localhost:5000/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, price, category, description }),
+        body: JSON.stringify({ name, price, category, description, image }),
       });
 
       if (res.ok) {
@@ -81,7 +88,6 @@ export default function AddItemPage() {
                   </label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g. Modern Sofa"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 outline-none transition-all focus:border-primary/50 focus:bg-white/10"
                     value={name}
@@ -96,7 +102,6 @@ export default function AddItemPage() {
                   </label>
                   <input
                     type="number"
-                    required
                     placeholder="250"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 outline-none transition-all focus:border-primary/50 focus:bg-white/10"
                     value={price}
@@ -129,12 +134,25 @@ export default function AddItemPage() {
                   Description
                 </label>
                 <textarea
-                  required
                   rows={5}
                   placeholder="Describe your product in detail..."
                   className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 outline-none transition-all focus:border-primary/50 focus:bg-white/10 resize-none"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-foreground/70 ml-1">
+                  <ImageIcon className="h-4 w-4" />
+                  Image URL
+                </label>
+                <input
+                  type="url"
+                  placeholder="https://example.com/image.jpg"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 outline-none transition-all focus:border-primary/50 focus:bg-white/10"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
                 />
               </div>
 

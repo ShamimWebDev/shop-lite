@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -109,9 +110,11 @@ export default function ItemsPage() {
               <p className="mt-2 text-foreground/40">
                 Be the first to list something amazing!
               </p>
-              <Button variant="outline" className="mt-8">
-                List an Item
-              </Button>
+              <Link href="/add-item">
+                <Button variant="outline" className="mt-8">
+                  List an Item
+                </Button>
+              </Link>
             </div>
           )}
         </div>

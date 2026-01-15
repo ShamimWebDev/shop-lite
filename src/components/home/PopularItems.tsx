@@ -48,7 +48,9 @@ export const PopularItems = () => {
             </p>
           </div>
           <Link href="/items" className="hidden sm:block">
-            <Button variant="outline">View All Gallery</Button>
+            <Button variant="outline" as="span">
+              View All Gallery
+            </Button>
           </Link>
         </div>
 
@@ -60,7 +62,7 @@ export const PopularItems = () => {
 
         <div className="mt-12 flex justify-center sm:hidden">
           <Link href="/items" className="w-full">
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full" as="span">
               View All Gallery
             </Button>
           </Link>

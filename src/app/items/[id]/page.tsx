@@ -14,6 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
+import { toast } from "react-hot-toast";
 
 interface Product {
   id: string;
@@ -114,7 +115,7 @@ export default function ItemDetailsPage() {
               <div className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
                 {product.category}
               </div>
-              <h1 className="text-4xl font-display font-bold md:text-6xl text-white leading-tight">
+              <h1 className="text-4xl font-display font-bold md:text-6xl truncate leading-tight">
                 {product.name}
               </h1>
               <div className="mt-6 flex items-baseline gap-4">
@@ -135,6 +136,7 @@ export default function ItemDetailsPage() {
 
               <div className="mt-12 space-y-4">
                 <Button
+                  onClick={() => toast.success("Added to cart!")}
                   size="lg"
                   className="h-16 w-full rounded-3xl text-lg gap-3"
                 >
