@@ -54,7 +54,7 @@ export const Benefits = () => {
 
           <div className="relative rounded-[2.5rem] bg-zinc-900 aspect-square lg:aspect-4/5 overflow-hidden border border-white/10 shadow-2xl group">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bbbda51658f7?q=80&w=2070&auto=format&fit=crop"
+              src="/images/benefits-dashboard.png"
               alt="Premium Dashboard"
               className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60"
             />
