@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/Button";
 import { ProductCard } from "./ProductCard";
@@ -56,7 +57,14 @@ export const PopularItems = () => {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {dummyProducts.map((product) => (
-            <ProductCard key={product.id} {...product} />
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              category={product.category}
+              image={product.image}
+            />
           ))}
         </div>
 
