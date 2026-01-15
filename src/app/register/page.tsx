@@ -10,6 +10,7 @@ import { toast } from "react-hot-toast";
 import { UserPlus, Mail, Lock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
+import { API_BASE_URL } from "@/lib/constants";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ export default function RegisterPage() {
     const toastId = toast.loading("Creating your account...");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

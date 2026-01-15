@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
+import { API_BASE_URL } from "@/lib/constants";
 
 interface Product {
   id: string;
@@ -34,7 +35,7 @@ export default function ItemDetailsPage() {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/items/${id}`);
+        const res = await fetch(`${API_BASE_URL}/api/items/${id}`);
         if (res.ok) {
           const data = await res.json();
           setProduct(data);
@@ -127,7 +128,7 @@ export default function ItemDetailsPage() {
                 </span>
               </div>
 
-              <div className="mt-10 p-8 rounded-[2rem] bg-white/5 border border-white/10">
+              <div className="mt-10 p-8 rounded-4xl bg-white/5 border border-white/10">
                 <h3 className="font-bold text-lg mb-4">About this item</h3>
                 <p className="text-lg leading-relaxed text-foreground/60">
                   {product.description}
@@ -163,7 +164,7 @@ export default function ItemDetailsPage() {
 
               <div className="mt-10 flex items-center justify-between border-t border-white/5 pt-8">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-indigo-600" />
+                  <div className="h-12 w-12 rounded-full bg-linear-to-br from-primary to-indigo-600" />
                   <div>
                     <p className="font-bold">Verified Seller</p>
                     <p className="text-xs text-foreground/40">

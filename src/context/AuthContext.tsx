@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { API_BASE_URL } from "@/lib/constants";
 
 interface User {
   email: string;
@@ -26,7 +27,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const checkAuth = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/me", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
         credentials: "include",
       });
       if (res.ok) {
@@ -53,7 +54,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const logout = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/logout", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });

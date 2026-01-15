@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 import { LogIn, Mail, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
+import { API_BASE_URL } from "@/lib/constants";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("demo@example.com");
@@ -24,7 +25,7 @@ export default function LoginPage() {
     const toastId = toast.loading("Logging in...");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

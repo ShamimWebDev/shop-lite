@@ -4,11 +4,12 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000";
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: CLIENT_URL,
     credentials: true,
   })
 );
@@ -81,8 +82,8 @@ app.post("/api/auth/login", (req, res) => {
   if (email === "demo@example.com" && password === "password") {
     res.cookie("auth_token", "mock_token_123", {
       httpOnly: true,
-      secure: false, // Set to true in production
-      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 3600000, // 1 hour
     });
     res.json({
@@ -99,8 +100,8 @@ app.post("/api/auth/signup", (req, res) => {
   // Mock signup logic - in a real app, you'd save to a database
   res.cookie("auth_token", "mock_token_123", {
     httpOnly: true,
-    secure: false, // Set to true in production
-    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     maxAge: 3600000, // 1 hour
   });
   res.status(201).json({

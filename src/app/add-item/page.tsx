@@ -15,6 +15,7 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "@/lib/constants";
 
 export default function AddItemPage() {
   const [name, setName] = useState("");
@@ -38,7 +39,7 @@ export default function AddItemPage() {
     const toastId = toast.loading("Listing your item...");
 
     try {
-      const res = await fetch("http://localhost:5000/api/items", {
+      const res = await fetch(`${API_BASE_URL}/api/items`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, price, category, description, image }),

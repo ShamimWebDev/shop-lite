@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/home/ProductCard";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { LayoutGrid, Filter, Search } from "lucide-react";
+import { API_BASE_URL } from "@/lib/constants";
 
 interface Product {
   id: string;
@@ -24,7 +25,7 @@ export default function ItemsPage() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/items");
+        const res = await fetch(`${API_BASE_URL}/api/items`);
         if (res.ok) {
           const data = await res.json();
           setProducts(data);
