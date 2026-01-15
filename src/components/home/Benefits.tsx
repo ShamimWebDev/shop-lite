@@ -52,33 +52,67 @@ export const Benefits = () => {
             </dl>
           </div>
 
-          <div className="relative rounded-3xl bg-zinc-900 aspect-video lg:aspect-square overflow-hidden border border-white/10 shadow-2xl group">
+          <div className="relative rounded-[2.5rem] bg-zinc-900 aspect-square lg:aspect-4/5 overflow-hidden border border-white/10 shadow-2xl group">
             <img
               src="https://images.unsplash.com/photo-1551288049-bbbda51658f7?q=80&w=2070&auto=format&fit=crop"
               alt="Premium Dashboard"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
 
-            {/* Floating Stats Card */}
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-xl transition-transform duration-500 group-hover:-translate-y-2">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-medium text-white/50">
-                    Monthly Active Users
-                  </p>
-                  <p className="text-xl font-bold text-white">
-                    24.8k{" "}
-                    <span className="text-xs font-normal text-green-400">
-                      +12%
-                    </span>
-                  </p>
+            {/* Gradient Overlays */}
+            <div className="absolute inset-0 bg-linear-to-t from-[#0A0A0B] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-linear-to-tr from-primary/20 via-transparent to-transparent" />
+
+            {/* Floating Card 1: Sales Growth */}
+            <div className="absolute top-12 -left-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-700 group-hover:translate-x-6 shadow-2xl">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/20 text-green-400">
+                  <span className="text-xl font-bold">↑</span>
                 </div>
-                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <div className="h-5 w-5 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+                <div>
+                  <p className="text-[10px] font-medium text-white/40 uppercase tracking-wider">
+                    Conversion
+                  </p>
+                  <p className="text-xl font-bold text-white">+24.5%</p>
                 </div>
               </div>
             </div>
+
+            {/* Floating Card 2: User Activity */}
+            <div className="absolute top-1/2 -right-6 -translate-y-1/2 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-700 group-hover:-translate-x-10 shadow-2xl">
+              <div className="flex flex-col gap-2">
+                <p className="text-[10px] font-medium text-white/40 uppercase tracking-wider">
+                  Global Reach
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-12 rounded-full bg-primary" />
+                  <div className="h-2 w-8 rounded-full bg-white/20" />
+                  <div className="h-2 w-16 rounded-full bg-primary/40" />
+                </div>
+                <p className="text-sm font-bold text-white">142 Countries</p>
+              </div>
+            </div>
+
+            {/* Bottom Stats Banner */}
+            <div className="absolute bottom-10 left-10 right-10 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-2xl shadow-2xl transition-all duration-500 group-hover:bottom-12 group-hover:bg-white/10">
+              <div className="grid grid-cols-2 gap-8 border-white/5 divide-x">
+                <div>
+                  <p className="text-[10px] font-medium text-white/40 uppercase tracking-wider">
+                    Total Revenue
+                  </p>
+                  <p className="mt-1 text-2xl font-bold text-white">$452.8k</p>
+                </div>
+                <div className="pl-8">
+                  <p className="text-[10px] font-medium text-white/40 uppercase tracking-wider">
+                    Active Stores
+                  </p>
+                  <p className="mt-1 text-2xl font-bold text-white">1,240</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Animated Glow */}
+            <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-primary/30 blur-[100px] transition-all duration-1000 group-hover:bg-primary/50" />
           </div>
         </div>
       </div>
