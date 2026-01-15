@@ -32,6 +32,32 @@ npm run dev
 
 _Note: Ensure both servers are running simultaneously._
 
+## Deployment Guide (Separate Deployment)
+
+This project is configured to run as two separate services: a Frontend (Next.js) and a Backend (Express).
+
+### 1. Deploying the Backend
+
+You can deploy the `server` folder to any Node.js hosting platform like **Render**, **Railway**, or **Heroku**.
+
+1.  Push your code to GitHub.
+2.  Connect your repository to your hosting provider.
+3.  **Root Directory:** Set this to `server`.
+4.  **Build Command:** `npm install`
+5.  **Start Command:** `npm start`
+6.  **Environment Variables:**
+    - `CLIENT_URL`: The URL of your deployed frontend (e.g., `https://your-shop-lite.vercel.app`).
+    - `NODE_ENV`: `production`
+
+### 2. Deploying the Frontend
+
+Deploy the root of the repository to **Vercel**.
+
+1.  Connect your repository to Vercel.
+2.  **Root Directory:** Leave as default (`./`).
+3.  **Environment Variables:**
+    - `NEXT_PUBLIC_API_URL`: The URL of your deployed backend (e.g., `https://your-api-service.onrender.com`).
+
 ## Route Summary
 
 | Route         | Access        | Description                                 |
@@ -50,7 +76,7 @@ _Note: Ensure both servers are running simultaneously._
 - **Product Gallery:** Dynamic fetching and display of products from the API.
 - **Product Details:** Individual pages for each item with rich metadata.
 - **User Authentication:** Mock login/signup flow with cookie-based access control.
-- **Protected Routes:** Middleware to secure the selling flow.
+- **Protected Routes:** Middleware (Proxy) to secure the selling flow.
 - **Interactive Notifications:** Toast notifications for user actions (Add to Cart, List Item).
 - **Premium UI/UX:** Glassmorphism effects, Framer Motion animations, and custom fonts.
 
